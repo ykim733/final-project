@@ -57,15 +57,15 @@ class MainHandler(webapp2.RequestHandler):
 #
 # class ArchiveHandler(webapp2.RequestHandler): #potential app where users can reference their other saved works
 #     def get(self):
-
-
-        userlogin = True
-        if userlogin:
-            self.response.out.write("<h1>Welcome!</h1>")
-        else:
-            self.response.out.write("Please login")
-        template = jinja_environment.get_template('form.html')
-        self.response.write(template.render())
+        #
+        #
+        # userlogin = True
+        # if userlogin:
+        #     self.response.out.write("<h1>Welcome!</h1>")
+        # else:
+        #     self.response.out.write("Please login")
+        # template = jinja_environment.get_template('form.html')
+        # self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([

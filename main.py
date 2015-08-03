@@ -10,7 +10,8 @@ jinja_environment = jinja2.Environment(loader=
 class MainHandler(webapp2.RequestHandler):
     def get(self):
       self.response.out.write("Hello world!")
-    
+     
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

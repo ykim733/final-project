@@ -1,15 +1,15 @@
-<<<<<<< HEAD
+
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 body {
-<<<<<<< HEAD
-  background-color: #CCE6FF;
-  
-=======
+
+  /*background-color: #CCE6FF;*/
+
+
   text-align: center; width: 100%;
   background-image: url("http://retrorenovation.com/wp-content/uploads/2015/01/crisp-linen-laminate.jpg");
   font-family: "Josefin Sans";
->>>>>>> 41a95d32dc0fa0b06e70e442ef8828d2a0f3753b
+
 }
 
 #essay {
@@ -19,3 +19,4 @@ body {
   border: 3px solid #9494B8;
   background-color: transparent;
   resize: none;
+}

@@ -10,9 +10,9 @@ jinja_environment = jinja2.Environment(loader=
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-    
-      user-login = True
-      if user-login:
+        userlogin = True
+        if userlogin:
+
             self.response.out.write("There is a user")
         else:
             self.response.out.write("Hello world!")

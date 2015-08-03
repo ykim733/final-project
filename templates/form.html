@@ -1,20 +1,21 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css"></link>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="script.js"></script>
 
   <link href= "/stylesheets/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <br>
 <br>
-
 <form action="/" method="post">
-  <input type = "text" value = "Username" name = "user">
-  <br><br>
-    <div>Essay: <br><br>
-    <textarea id="essay" rows="30" cols="40" name="essay_text"/>
+    <h2>Essay:</h2> <br><br>
+    <textarea id="essay" class="form-control" rows="40" name="essay_text" background-color: "transparent">
     </textarea></div>
-    <br>
+    <br><br>
     <div><input type="submit" value="Save"></div>
   </form>
    <!--add box for 'you have {{time}} minutes remaining' -->

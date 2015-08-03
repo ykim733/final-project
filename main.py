@@ -12,10 +12,11 @@ class MainHandler(webapp2.RequestHandler):
 
         userlogin = True
         if userlogin:
-
-            self.response.out.write("There is a user")
+            self.response.out.write("Welcome!")
         else:
-            self.response.out.write("Hello world!")
+            self.response.out.write("Please login")
+        template = jinja_environment.get_template('form.html')
+        self.response.write(template.render())
 
     self.request.get(essay_text)
 

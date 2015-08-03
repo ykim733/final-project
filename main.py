@@ -11,9 +11,11 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         userlogin = True
         if userlogin:
-            self.response.out.write("There is a user")
+            self.response.out.write("Welcome!")
         else:
-            self.response.out.write("Hello world!")
+            self.response.out.write("Please login")
+        template = jinja_environment.get_template('form.html')
+        self.response.write(template.render())
 
 
 app = webapp2.WSGIApplication([

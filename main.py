@@ -4,6 +4,7 @@ import webapp2
 import jinja2
 import os
 import time
+#import threading
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -27,8 +28,17 @@ class MainHandler(webapp2.RequestHandler):
             for t in range(120,-1,-1):
                 minutes = t / 60
                 seconds = t % 60
+
+                screenTime =  "%d:%2d" % (minutes,seconds)
+                print screenTime #prints countdown to screen
+
+                #time.sleep(1.0) # the sleep makes the website impossible to reload
+                my_time_dictionary = {"screenTime" : screenTime }
+                #self.response.out.write(first_template.render(my_time_dictionary))
+
             #   print  "%d:%2d" % (minutes,seconds)
                 # time.sleep(1.0) This will print a live countdown to the console, but even without printing, the sleep makes the website impossible to reload
+
 
     def post(self):
 
@@ -44,9 +54,9 @@ class MainHandler(webapp2.RequestHandler):
             essayText.put()
             self.response.out.write(essayText.essay)
             #self.response.out.write(user) use this to view key after hitting submit
-
-
-
+#
+# class ArchiveHandler(webapp2.RequestHandler): #potential app where users can reference their other saved works
+#     def get(self):
 
 
         userlogin = True
@@ -60,4 +70,5 @@ class MainHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
+    #('/myessays', ArchiveHandler)
 ], debug=True)

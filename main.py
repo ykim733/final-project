@@ -9,8 +9,12 @@ jinja_environment = jinja2.Environment(loader=
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-      self.response.out.write("Hello world!")
-    
+        user-login = True
+        if user-login:
+            self.response.out.write("There is a user")
+        else:
+            self.response.out.write("Hello world!")
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

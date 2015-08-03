@@ -17,6 +17,8 @@ class MainHandler(webapp2.RequestHandler):
         else:
             self.response.out.write("Hello world!")
 
+    self.request.get(essay_text)
+
 
 
 app = webapp2.WSGIApplication([

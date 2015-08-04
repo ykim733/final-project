@@ -4,7 +4,7 @@ import webapp2
 import jinja2
 import os
 import time
-#import threading
+import threading
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -33,11 +33,9 @@ class MainHandler(webapp2.RequestHandler):
                 print screenTime #prints countdown to screen
 
                 #time.sleep(1.0) # the sleep makes the website impossible to reload
-                my_time_dictionary = {"screenTime" : screenTime }
+                #my_time_dictionary = {"screenTime" : screenTime }
                 #self.response.out.write(first_template.render(my_time_dictionary))
 
-            #   print  "%d:%2d" % (minutes,seconds)
-                # time.sleep(1.0) This will print a live countdown to the console, but even without printing, the sleep makes the website impossible to reload
 
 
     def post(self):
@@ -54,10 +52,8 @@ class MainHandler(webapp2.RequestHandler):
             essayText.put()
             self.response.out.write(essayText.essay)
             #self.response.out.write(user) use this to view key after hitting submit
-#
-# class ArchiveHandler(webapp2.RequestHandler): #potential app where users can reference their other saved works
-#     def get(self):
 
+<<<<<<< HEAD
 
             userlogin = True
             if userlogin:
@@ -66,9 +62,24 @@ class MainHandler(webapp2.RequestHandler):
                 self.response.out.write("Please login")
             template = jinja_environment.get_template('form.html')
             self.response.write(template.render())
+=======
+class ArchiveHandler(webapp2.RequestHandler):
+    def get(self):
+         archive_template = jinja_environment.get_template('templates/archive.html')
+         self.response.out.write(archive_template.render())
+        #
+        #
+        # userlogin = True
+        # if userlogin:
+        #     self.response.out.write("<h1>Welcome!</h1>")
+        # else:
+        #     self.response.out.write("Please login")
+        # template = jinja_environment.get_template('form.html')
+        # self.response.write(template.render())
+>>>>>>> a11cda2261525b46f462a7339b4b49cac2bb766e
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-    #('/myessays', ArchiveHandler)
+    ('/', MainHandler),
+    ('/myessays', ArchiveHandler)
 ], debug=True)

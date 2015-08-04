@@ -6,6 +6,7 @@ import os
 import time
 import threading
 from google.appengine.api import users
+import sys
 
 
 jinja_environment = jinja2.Environment(loader=
@@ -25,43 +26,56 @@ class EssayModel(ndb.Model):
 class MainHandler(webapp2.RequestHandler):
 
     def get(self):
+            first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
+            self.response.out.write(first_template.render())
+            for t in range(120,-1,-1):
+                minutes = t / 60
+                seconds = t % 60
 
-        user = users.get_current_user()
+                screenTime =  "%d:%2d" % (minutes,seconds)
+                print screenTime #prints countdown to screen
 
-        if user:
-
-            self.response.write(user)
-            user = UserModel(currentUser = user.user_id())
-            user.put()
-            essay = EssayModel(essay = "this is also an essay")
-            essay.put()
-        else:
-
-            self.redirect(users.create_login_url(self.request.uri))
-
-        first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
-        self.response.out.write(first_template.render())
-        for t in range(120,-1,-1):
-            minutes = t / 60
-            seconds = t % 60
-
-            screenTime =  "%d:%2d" % (minutes,seconds)
-            print screenTime #prints countdown to screen
-
-
-
-                #qtime.sleep(1.0) # the sleep makes the website impossible to reload
+                #time.sleep(1.0) # the sleep makes the website impossible to reload
                 #my_time_dictionary = {"screenTime" : screenTime }
                 #self.response.out.write(first_template.render(my_time_dictionary))
 
+            user = users.get_current_user()
 
+            if user:
+
+                self.response.write(user)
+                user = UserModel(currentUser = user.user_id())
+                user.put()
+                # essay = EssayModel(essay = self.request.get("essay_text"))
+                #
+                # essay.put()
+            else:
+
+                self.redirect(users.create_login_url(self.request.uri))
+
+            first_template = jinja_environment.get_template('templates/form.html')
+            self.response.out.write(first_template.render())
+            #self.start_time=datetime.datetime.now()
+            #print start_time
+
+            # for t in range(120,-1,-1):
+            #     minutes = t / 60
+            #     seconds = t % 60
+            #
+            #     screenTime =  "%d:%2d" % (minutes,seconds)
+            #     print screenTime #prints countdown to screen
+            #
+            #     time.sleep(1.0) # the sleep makes the website impossible to reload
+            #     my_time_dictionary = {"screenTime" : screenTime }
+            #     self.response.out.write(first_template.render(my_time_dictionary))
 
     #def post(self):
 
+
             #pass text to datastore from form
-            # essayText = UserModel(essay=self.request.get("essay_text"))
+            #essay=EssayModel(self.request.get("essay_text"))
             # essay_vars = {"my_essay" : essayText}
-            # essayText.put()
+            #essay.put()
             # self.response.out.write(essayText.essay)
             # #self.response.out.write(user) use this to view key after hitting submit
 
@@ -70,13 +84,20 @@ class ArchiveHandler(webapp2.RequestHandler):
     def get(self):
          archive_template = jinja_environment.get_template('templates/archive.html')
          self.response.out.write(archive_template.render())
+        #
+        #
+        # userlogin = True
+        # if userlogin:
+        #     self.response.out.write("<h1>Welcome!</h1>")
+        # else:
+        #     self.response.out.write("Please login")
+        # template = jinja_environment.get_template('form.html')
+        # self.response.write(template.render())
 
 class MessageHandler(webapp2.RequestHandler):
     def get(self):
         message_template = jinja_environment.get_template('templates/messages.html')
         self.response.out.write(message_template.render())
-
-
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

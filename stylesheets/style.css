@@ -2,16 +2,31 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 body {
+<<<<<<< HEAD
+  background-image: url("http://img14.deviantart.net/2084/i/2013/203/0/7/stars_in_a_jar_by_astratierra-d6epif8.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+=======
 
   background-color: #CCE6FF;
 
 
 
+>>>>>>> a11cda2261525b46f462a7339b4b49cac2bb766e
 
   text-align: center; width: 100%;
-  background-image: url("http://retrorenovation.com/wp-content/uploads/2015/01/crisp-linen-laminate.jpg");
   font-family: "Josefin Sans";
+<<<<<<< HEAD
+}
 
+#navigation {
+  background-color: #FFDBFF;
+=======
+
+>>>>>>> a11cda2261525b46f462a7339b4b49cac2bb766e
 }
 
 #essay {
@@ -21,5 +36,31 @@ body {
   border: 3px solid #9494B8;
   background-color: transparent;
   resize: none;
+<<<<<<< HEAD
+  font-size: 22px;
+}
 
+#button{
+  margin: auto;
+  width: 40%;
+  background-color: #FFDBFF;
+  border: none;
+
+}
+
+#fonts{
+  margin-left: 15%;
+  width: 20%;
+  float: left;
+  margin-right: 10px;
+}
+
+#font_size{
+  margin-right: 15%;
+  width: 20%;
+  float: right;
+  margin-left: 10px;
+=======
+
+>>>>>>> a11cda2261525b46f462a7339b4b49cac2bb766e
 }

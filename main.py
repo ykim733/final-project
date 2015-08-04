@@ -55,6 +55,14 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
+    def post(self):
+
+            #pass text to datastore from form 
+            # essayText = UserModel(essay=self.request.get("essay_text"))
+            # essay_vars = {"my_essay" : essayText}
+            # essayText.put()
+            # self.response.out.write(essayText.essay)
+            # #self.response.out.write(user) use this to view key after hitting submit
 
 
 class ArchiveHandler(webapp2.RequestHandler):

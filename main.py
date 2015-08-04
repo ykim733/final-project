@@ -1,4 +1,3 @@
-
 from google.appengine.ext import ndb
 import webapp2
 import jinja2
@@ -25,7 +24,7 @@ class MainHandler(webapp2.RequestHandler):
 
     def get(self):
 
-            first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
+            first_template = jinja_environment.get_template('templates/form.html') 
             self.response.out.write(first_template.render())
 
             user = users.get_current_user()
@@ -36,32 +35,22 @@ class MainHandler(webapp2.RequestHandler):
                 self.response.write(user)
                 user = UserModel(currentUser = user.user_id())
                 user.put()
-                #essay = EssayModel(essay = "test")
-                #
 
-
-                #essay.put()
             else:
 
 
                 self.redirect(users.create_login_url(self.request.uri))
 
-            #first_template = jinja_environment.get_template('templates/form.html')
 
-            #self.start_time=datetime.datetime.now()
-            #print start_time
 
     def post(self):
         user_essay_text = self.request.get("essay_text")
         self.response.write("my essay text is : " + user_essay_text)
 
+        essay = EssayModel(essay = user_essay_text)
+        essay.put()
 
-            #pass text to datastore from form
-            #essay=EssayModel(self.request.get("essay_text"))
-            # essay_vars = {"my_essay" : essayText}
-            #essay.put()
-            # self.response.out.write(essayText.essay)
-            # #self.response.out.write(user) use this to view key after hitting submit
+
 
 
 class ArchiveHandler(webapp2.RequestHandler):

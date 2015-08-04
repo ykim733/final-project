@@ -63,33 +63,33 @@ class MainHandler(webapp2.RequestHandler):
             template = jinja_environment.get_template('form.html')
             self.response.write(template.render())
 
-        user = users.get_current_user()
+            user = users.get_current_user()
 
-        if user:
+            if user:
 
-            self.response.write(user)
-            user = UserModel(currentUser = user.user_id())
-            user.put()
-            essay = EssayModel(essay = "this is also an essay")
-            essay.put()
-        else:
+                self.response.write(user)
+                user = UserModel(currentUser = user.user_id())
+                user.put()
+                essay = EssayModel(essay = "this is also an essay")
+                essay.put()
+            else:
 
-            self.redirect(users.create_login_url(self.request.uri))
+                self.redirect(users.create_login_url(self.request.uri))
 
-        first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
-        self.response.out.write(first_template.render())
-        for t in range(120,-1,-1):
-            minutes = t / 60
-            seconds = t % 60
+            first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
+            self.response.out.write(first_template.render())
+            for t in range(120,-1,-1):
+                minutes = t / 60
+                seconds = t % 60
 
-            screenTime =  "%d:%2d" % (minutes,seconds)
-            print screenTime #prints countdown to screen
+                screenTime =  "%d:%2d" % (minutes,seconds)
+                print screenTime #prints countdown to screen
 
                 #qtime.sleep(1.0) # the sleep makes the website impossible to reload
                 #my_time_dictionary = {"screenTime" : screenTime }
                 #self.response.out.write(first_template.render(my_time_dictionary))
 
-    def post(self):
+    # def post(self):
 
             #pass text to datastore from form
             # essayText = UserModel(essay=self.request.get("essay_text"))
@@ -97,7 +97,6 @@ class MainHandler(webapp2.RequestHandler):
             # essayText.put()
             # self.response.out.write(essayText.essay)
             # #self.response.out.write(user) use this to view key after hitting submit
-
 
 class ArchiveHandler(webapp2.RequestHandler):
     def get(self):

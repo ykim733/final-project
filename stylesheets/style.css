@@ -37,8 +37,12 @@ body {
   background-color: #FFDBFF;
 }
 
+
 #logout{
   float:right;
+}
+#logout_button {
+  float: right;
 }
 
 #essay {

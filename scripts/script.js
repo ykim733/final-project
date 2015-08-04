@@ -24,3 +24,12 @@ function enableTab(id) {
 // Enable the tab character onkeypress (onkeydown) inside textarea...
 // ... for a textarea that has an `id="my-textarea"`
 enableTab('essay');
+
+function bold() {
+    var x = $('#description-box');
+    if (x.css("font-weight") !== "bold") {
+        x.css("font-weight", "bold");
+    } else {
+        x.css("font-weight", "normal");
+    }
+}

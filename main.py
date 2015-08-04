@@ -13,6 +13,7 @@ jinja_environment = jinja2.Environment(loader=
 
 
 
+
 class UserModel(ndb.Model):
     currentUser = ndb.StringProperty(required = True)
 
@@ -24,7 +25,7 @@ class MainHandler(webapp2.RequestHandler):
 
     def get(self):
 
-            first_template = jinja_environment.get_template('templates/form.html') 
+            first_template = jinja_environment.get_template('templates/form.html')
             self.response.out.write(first_template.render())
 
             user = users.get_current_user()
@@ -61,7 +62,7 @@ class ArchiveHandler(webapp2.RequestHandler):
          self.response.out.write(archive_template.render())
          userlogin = True
 
-class MessageHandler(ndb.Model):
+class MessageHandler(webapp2.RequestHandler):
     def get(self):
         message_template = jinja_environment.get_template('templates/messages.html')
         self.response.out.write(message_template.render())
@@ -69,5 +70,5 @@ class MessageHandler(ndb.Model):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/myessays', ArchiveHandler),
-    ('/messages', MessageHandler)
+    ('/references', MessageHandler)
 ], debug=True)

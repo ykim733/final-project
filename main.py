@@ -13,12 +13,12 @@ jinja_environment = jinja2.Environment(loader=
 
 
 
-
 class UserModel(ndb.Model):
     currentUser = ndb.StringProperty(required = True)
 
 class EssayModel(ndb.Model):
     essay = ndb.TextProperty(required = True)
+
 
 
 

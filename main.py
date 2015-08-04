@@ -32,7 +32,7 @@ class MainHandler(webapp2.RequestHandler):
                 screenTime =  "%d:%2d" % (minutes,seconds)
                 print screenTime #prints countdown to screen
 
-                #time.sleep(1.0) # the sleep makes the website impossible to reload
+                #qtime.sleep(1.0) # the sleep makes the website impossible to reload
                 #my_time_dictionary = {"screenTime" : screenTime }
                 #self.response.out.write(first_template.render(my_time_dictionary))
 

@@ -11,10 +11,7 @@ from google.appengine.api import users
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
-class Productivity(ndb.Model):
-    essay = ndb.StringProperty(required = False)
-    username = ndb.StringProperty(required = False)
-    password = ndb.StringProperty(required = False)
+
 
 
 
@@ -22,8 +19,9 @@ class Productivity(ndb.Model):
 
 class UserModel(ndb.Model):
     currentUser = ndb.StringProperty(required = True)  # OR not required, or repeated, depends on your app.
-    some_text = ndb.TextProperty()
-    some_more_test = ndb.TextProperty()
+    essay = ndb.TextProperty()
+
+
 
 
 
@@ -33,15 +31,16 @@ class MainHandler(webapp2.RequestHandler):
             user = users.get_current_user()
             if user:
             # If there was a user logged in, do stuff.
+
                 self.response.write(user)
-                user = UserModel(currentUser = user.user_id(), text= "hey")
+                user = UserModel(currentUser = user.user_id())
                 user.put()
             else:
             # Send the user to a login page, then come back to this request, this
             # time a user will be present.
                 self.redirect(users.create_login_url(self.request.uri))
 
-            first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
+            first_template = jinja_environment.get_template('templates/form.html')
             self.response.out.write(first_template.render())
             for t in range(120,-1,-1):
                 minutes = t / 60
@@ -59,13 +58,13 @@ class MainHandler(webapp2.RequestHandler):
     def post(self):
 
 
-            user = Productivity(username=self.request.get("user")) #gets user input from url in Productivity class
+            user = UserModel(username=self.request.get("user")) #gets user input from url in Productivity class
             template_vars = { "my_user" : user}
             user.put() #puts user into datastore
             #qry = Productivity.query(Productivity.username == "nicki").fetch()
             self.response.out.write(user.username)
             #now instead of self writing it, make a template variable
-            essayText = Productivity(essay=self.request.get("essay_text"))
+            essayText = UserModel(essay=self.request.get("essay_text"))
             essay_vars = {"my_essay" : essayText}
             essayText.put()
             self.response.out.write(essayText.essay)

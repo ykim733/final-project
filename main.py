@@ -13,41 +13,41 @@ jinja_environment = jinja2.Environment(loader=
 
 
 
-
-
-
-
 class UserModel(ndb.Model):
     currentUser = ndb.StringProperty(required = True)  # OR not required, or repeated, depends on your app.
-    essay = ndb.TextProperty()
 
+class EssayModel(ndb.Model):
+    essay = ndb.TextProperty(required = True)
 
 
 
 
 class MainHandler(webapp2.RequestHandler):
+
     def get(self):
 
-            user = users.get_current_user()
-            if user:
-            # If there was a user logged in, do stuff.
+        user = users.get_current_user()
 
-                self.response.write(user)
-                user = UserModel(currentUser = user.user_id())
-                user.put()
-            else:
-            # Send the user to a login page, then come back to this request, this
-            # time a user will be present.
-                self.redirect(users.create_login_url(self.request.uri))
+        if user:
 
-            first_template = jinja_environment.get_template('templates/form.html')
-            self.response.out.write(first_template.render())
-            for t in range(120,-1,-1):
-                minutes = t / 60
-                seconds = t % 60
+            self.response.write(user)
+            user = UserModel(currentUser = user.user_id())
+            user.put()
+            essay = EssayModel(essay = "this is an essay")
+            essay.put()
+        else:
 
-                screenTime =  "%d:%2d" % (minutes,seconds)
-                print screenTime #prints countdown to screen
+            self.redirect(users.create_login_url(self.request.uri))
+
+        first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
+        self.response.out.write(first_template.render())
+        for t in range(120,-1,-1):
+            minutes = t / 60
+            seconds = t % 60
+
+            screenTime =  "%d:%2d" % (minutes,seconds)
+            print screenTime #prints countdown to screen
+
 
                 #qtime.sleep(1.0) # the sleep makes the website impossible to reload
                 #my_time_dictionary = {"screenTime" : screenTime }
@@ -55,20 +55,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-    def post(self):
 
-
-            user = UserModel(username=self.request.get("user")) #gets user input from url in Productivity class
-            template_vars = { "my_user" : user}
-            user.put() #puts user into datastore
-            #qry = Productivity.query(Productivity.username == "nicki").fetch()
-            self.response.out.write(user.username)
-            #now instead of self writing it, make a template variable
-            essayText = UserModel(essay=self.request.get("essay_text"))
-            essay_vars = {"my_essay" : essayText}
-            essayText.put()
-            self.response.out.write(essayText.essay)
-            #self.response.out.write(user) use this to view key after hitting submit
 
 class ArchiveHandler(webapp2.RequestHandler):
     def get(self):

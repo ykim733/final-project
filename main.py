@@ -15,9 +15,7 @@ jinja_environment = jinja2.Environment(loader=
 
 class UserModel(ndb.Model):
     currentUser = ndb.StringProperty(required = True)
-
-class EssayModel(ndb.Model):
-    essay = ndb.TextProperty(required = True)
+    essay = ndb.TextProperty(required = False)
 
 
 
@@ -25,28 +23,26 @@ class EssayModel(ndb.Model):
 class MainHandler(webapp2.RequestHandler):
 
     def get(self):
-
         user = users.get_current_user()
-
         if user:
-
             self.response.write(user)
-            user = UserModel(currentUser = user.user_id())
+            user = UserModel(currentUser = user.user_id(), essay = self.request.get("essay"))
             user.put()
-            essay = EssayModel(essay = "this is also an essay")
-            essay.put()
         else:
-
             self.redirect(users.create_login_url(self.request.uri))
 
         first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
         self.response.out.write(first_template.render())
+
         for t in range(120,-1,-1):
             minutes = t / 60
             seconds = t % 60
 
             screenTime =  "%d:%2d" % (minutes,seconds)
             print screenTime #prints countdown to screen
+
+        def get(self):
+            self.request.get(first_template.render('essay'))
 
 
 class ArchiveHandler(webapp2.RequestHandler):

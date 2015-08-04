@@ -1,7 +1,7 @@
-
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 body {
+
   background-image: url("http://img14.deviantart.net/2084/i/2013/203/0/7/stars_in_a_jar_by_astratierra-d6epif8.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -29,10 +29,16 @@ body {
   width: 100%;
   height: 50px;
   display: inline;
+  text-align: center; width: 100%;
+  font-family: "Josefin Sans";
 }
 
 #navigation {
   background-color: #FFDBFF;
+}
+
+#logout{
+  float:right;
 }
 
 #essay {
@@ -50,7 +56,6 @@ body {
   width: 40%;
   background-color: #FFDBFF;
   border: none;
-
 }
 
 #fonts{
@@ -60,6 +65,7 @@ body {
   margin-right: 10px;
   text-align: left;
 }
+
 
 #font_size{
   margin-right: 15%;

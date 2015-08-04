@@ -17,59 +17,41 @@ jinja_environment = jinja2.Environment(loader=
 class UserModel(ndb.Model):
     currentUser = ndb.StringProperty(required = True)
 
+
 class EssayModel(ndb.Model):
     essay = ndb.TextProperty(required = True)
-
-
-
 
 class MainHandler(webapp2.RequestHandler):
 
     def get(self):
+
             first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
             self.response.out.write(first_template.render())
-            for t in range(120,-1,-1):
-                minutes = t / 60
-                seconds = t % 60
-
-                screenTime =  "%d:%2d" % (minutes,seconds)
-                print screenTime #prints countdown to screen
-
-                #time.sleep(1.0) # the sleep makes the website impossible to reload
-                #my_time_dictionary = {"screenTime" : screenTime }
-                #self.response.out.write(first_template.render(my_time_dictionary))
 
             user = users.get_current_user()
 
             if user:
 
+
                 self.response.write(user)
                 user = UserModel(currentUser = user.user_id())
                 user.put()
-                # essay = EssayModel(essay = self.request.get("essay_text"))
+                #essay = EssayModel(essay = "test")
                 #
-                # essay.put()
+
+                #essay.put()
             else:
 
                 self.redirect(users.create_login_url(self.request.uri))
 
             first_template = jinja_environment.get_template('templates/form.html')
-            self.response.out.write(first_template.render())
+
             #self.start_time=datetime.datetime.now()
             #print start_time
 
-            # for t in range(120,-1,-1):
-            #     minutes = t / 60
-            #     seconds = t % 60
-            #
-            #     screenTime =  "%d:%2d" % (minutes,seconds)
-            #     print screenTime #prints countdown to screen
-            #
-            #     time.sleep(1.0) # the sleep makes the website impossible to reload
-            #     my_time_dictionary = {"screenTime" : screenTime }
-            #     self.response.out.write(first_template.render(my_time_dictionary))
-
-    #def post(self):
+    def post(self):
+        user_essay_text = self.request.get("essay_text")
+        self.response.write("my essay text is : " + user_essay_text)
 
 
             #pass text to datastore from form
@@ -80,21 +62,13 @@ class MainHandler(webapp2.RequestHandler):
             # #self.response.out.write(user) use this to view key after hitting submit
 
 
-class ArchiveHandler(webapp2.RequestHandler):
+class ArchiveHandler(ndb.Model):
     def get(self):
          archive_template = jinja_environment.get_template('templates/archive.html')
          self.response.out.write(archive_template.render())
-        #
-        #
-        # userlogin = True
-        # if userlogin:
-        #     self.response.out.write("<h1>Welcome!</h1>")
-        # else:
-        #     self.response.out.write("Please login")
-        # template = jinja_environment.get_template('form.html')
-        # self.response.write(template.render())
+         userlogin = True
 
-class MessageHandler(webapp2.RequestHandler):
+class MessageHandler(ndb.Model):
     def get(self):
         message_template = jinja_environment.get_template('templates/messages.html')
         self.response.out.write(message_template.render())

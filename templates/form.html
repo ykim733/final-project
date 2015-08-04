@@ -39,14 +39,17 @@
 <option>20</option>
 </select>
 </div>
-<form action="/" method="post">
-    <textarea id="essay" class="form-control" rows="40" name="essay_text" background-color= "transparent" placeholder="Write something legit, yo" ></textarea>
-  </div>
+  <form action="/" method="post">
+      <textarea id="essay" class="form-control" rows="40" name="essay_text" background-color= "transparent" placeholder="Write something legit, yo" >
+      </textarea>
+        <input type="submit" id="button"  name="essay_button" class="btn btn-primary btn-lg btn-block" value="Save Essay">
+      <!-- add save to archive option button -->
 
-    <br><br>
-      <button id="button" type="button" class="btn btn-primary btn-lg btn-block">Save Essay</button>
-    <!-- add save to archive option button -->
   </form>
+
+
+
+
   <br>
   <br>
    <!--add box for 'you have {{time}} minutes remaining' -->

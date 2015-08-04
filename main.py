@@ -5,6 +5,7 @@ import jinja2
 import os
 import time
 import threading
+from google.appengine.api import users
 
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
@@ -20,9 +21,24 @@ class Productivity(ndb.Model):
 
 # Hai girl hai, so I got the user input working in the url input, but I haven't been able to link it in a form good luck!
 # btw I just added a username input in the form with the essay entitle from.html
+class UserModel(ndb.Model):
+        currentUser=ndb.StringProperty()
+        text= ndb.TextProperty()
+
+
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
+
+            # user = users.get_current.users()
+            # if user:
+            #     self.response.write(user)
+            #     user=UserModel(currentUser = user.user_id(), text="")
+            #     user.put()
+            # else:
+            #     self.redirect(users.create_login_url(self.request.url))
+
             first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
             self.response.out.write(first_template.render())
             for t in range(120,-1,-1):
@@ -53,16 +69,6 @@ class MainHandler(webapp2.RequestHandler):
             self.response.out.write(essayText.essay)
             #self.response.out.write(user) use this to view key after hitting submit
 
-<<<<<<< HEAD
-
-            userlogin = True
-            if userlogin:
-                self.response.out.write("<h1>Welcome!</h1>")
-            else:
-                self.response.out.write("Please login")
-            template = jinja_environment.get_template('form.html')
-            self.response.write(template.render())
-=======
 class ArchiveHandler(webapp2.RequestHandler):
     def get(self):
          archive_template = jinja_environment.get_template('templates/archive.html')
@@ -76,10 +82,15 @@ class ArchiveHandler(webapp2.RequestHandler):
         #     self.response.out.write("Please login")
         # template = jinja_environment.get_template('form.html')
         # self.response.write(template.render())
->>>>>>> a11cda2261525b46f462a7339b4b49cac2bb766e
+class MessageHandler(webapp2.RequestHandler):
+    def get(self):
+        message_template = jinja_environment.get_template('templates/messages.html')
+        self.response.out.write(message_template.render())
+
 
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/myessays', ArchiveHandler)
+    ('/myessays', ArchiveHandler),
+    ('/messages', MessageHandler)
 ], debug=True)

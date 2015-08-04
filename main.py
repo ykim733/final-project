@@ -15,7 +15,7 @@ jinja_environment = jinja2.Environment(loader=
 
 
 class UserModel(ndb.Model):
-    currentUser = ndb.StringProperty(required = True)  # OR not required, or repeated, depends on your app.
+    currentUser = ndb.StringProperty(required = True)
 
 class EssayModel(ndb.Model):
     essay = ndb.TextProperty(required = True)
@@ -33,7 +33,7 @@ class MainHandler(webapp2.RequestHandler):
             self.response.write(user)
             user = UserModel(currentUser = user.user_id())
             user.put()
-            essay = EssayModel(essay = "this is an essay")
+            essay = EssayModel(essay = "this is also an essay")
             essay.put()
         else:
 
@@ -48,26 +48,12 @@ class MainHandler(webapp2.RequestHandler):
             screenTime =  "%d:%2d" % (minutes,seconds)
             print screenTime #prints countdown to screen
 
-                #qtime.sleep(1.0) # the sleep makes the website impossible to reload
-                #my_time_dictionary = {"screenTime" : screenTime }
-                #self.response.out.write(first_template.render(my_time_dictionary))
-
-
-
 
 class ArchiveHandler(webapp2.RequestHandler):
     def get(self):
          archive_template = jinja_environment.get_template('templates/archive.html')
          self.response.out.write(archive_template.render())
-        #
-        #
-        # userlogin = True
-        # if userlogin:
-        #     self.response.out.write("<h1>Welcome!</h1>")
-        # else:
-        #     self.response.out.write("Please login")
-        # template = jinja_environment.get_template('form.html')
-        # self.response.write(template.render())
+
 class MessageHandler(webapp2.RequestHandler):
     def get(self):
         message_template = jinja_environment.get_template('templates/messages.html')

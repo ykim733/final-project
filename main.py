@@ -17,9 +17,7 @@ class Productivity(ndb.Model):
 
 
 
-
-
-# class MainHandler(webapp2.RequestHandler):
+class MainHandler(webapp2.RequestHandler):
 #     def get(self):
 #             first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
 #             self.response.out.write(first_template.render())
@@ -36,14 +34,14 @@ class Productivity(ndb.Model):
 
 
 
-    def post(self):
+    def get(self):
 
         # Try and read who's the current user.
         user = users.get_current_user()
         if user:
             # If there was a user logged in, do stuff.
             self.response.out.write(user)
-            user = UserModel(currentUser = user.user_id(), text= "this is a user")
+            user = Productivity(currentUser = user.user_id(), essay= "this is a user")
             user.put()
         else:
             # Send the user to a login page, then come back to this request, this
@@ -89,6 +87,6 @@ class ArchiveHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', Productivity),
+    ('/', MainHandler),
     ('/myessays', ArchiveHandler)
 ], debug=True)

@@ -39,12 +39,14 @@ class MainHandler(webapp2.RequestHandler):
                 #essay = EssayModel(essay = "test")
                 #
 
+
                 #essay.put()
             else:
 
+
                 self.redirect(users.create_login_url(self.request.uri))
 
-            first_template = jinja_environment.get_template('templates/form.html')
+            #first_template = jinja_environment.get_template('templates/form.html')
 
             #self.start_time=datetime.datetime.now()
             #print start_time
@@ -62,7 +64,9 @@ class MainHandler(webapp2.RequestHandler):
             # #self.response.out.write(user) use this to view key after hitting submit
 
 
-class ArchiveHandler(ndb.Model):
+class ArchiveHandler(webapp2.RequestHandler):
+
+
     def get(self):
          archive_template = jinja_environment.get_template('templates/archive.html')
          self.response.out.write(archive_template.render())

@@ -2,11 +2,11 @@
 
 body {
 
-  background-image: url("http://img14.deviantart.net/2084/i/2013/203/0/7/stars_in_a_jar_by_astratierra-d6epif8.jpg");
-  background-position: center center;
+  background-image: url("http://media.tumblr.com/tumblr_mcbowjIr5E1qjs3ry.png");
+  /*background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
+  background-size: cover;*/
   background-color: #464646;
   text-align: center; width: 100%;
   font-family: "Josefin Sans";
@@ -34,7 +34,13 @@ body {
 }
 
 #navigation {
-  background-color: #FFDBFF;
+  background-image: url("http://jeffreyhunt.com/wp-content/uploads/2013/10/4-Clouds-Background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: auto;
+  height: 200px;
+  box-shadow: 0px 6px 7px #818181;
 }
 
 
@@ -43,6 +49,10 @@ body {
 }
 #logout_button {
   float: right;
+}
+
+#text_editor_buttons {
+   background-color: transparent;
 }
 
 #essay {
@@ -58,7 +68,7 @@ body {
 #button{
   margin: auto;
   width: 40%;
-  background-color: #FFDBFF;
+  background-color: #B2B2CC;
   border: none;
 }
 

@@ -56,7 +56,7 @@ class MainHandler(webapp2.RequestHandler):
 
 
 
-    def post(self):
+    #def post(self):
 
             #pass text to datastore from form
             # essayText = UserModel(essay=self.request.get("essay_text"))

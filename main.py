@@ -7,6 +7,7 @@ import time
 import threading
 from google.appengine.api import users
 
+
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
@@ -19,25 +20,26 @@ class Productivity(ndb.Model):
 
 
 
-# Hai girl hai, so I got the user input working in the url input, but I haven't been able to link it in a form good luck!
-# btw I just added a username input in the form with the essay entitle from.html
 class UserModel(ndb.Model):
-        currentUser=ndb.StringProperty()
-        text= ndb.TextProperty()
-
+    currentUser = ndb.StringProperty(required = True)  # OR not required, or repeated, depends on your app.
+    some_text = ndb.TextProperty()
+    some_more_test = ndb.TextProperty()
 
 
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
 
-            # user = users.get_current.users()
-            # if user:
-            #     self.response.write(user)
-            #     user=UserModel(currentUser = user.user_id(), text="")
-            #     user.put()
-            # else:
-            #     self.redirect(users.create_login_url(self.request.url))
+            user = users.get_current_user()
+            if user:
+            # If there was a user logged in, do stuff.
+                self.response.write(user)
+                user = UserModel(currentUser = user.user_id(), text= "hey")
+                user.put()
+            else:
+            # Send the user to a login page, then come back to this request, this
+            # time a user will be present.
+                self.redirect(users.create_login_url(self.request.uri))
 
             first_template = jinja_environment.get_template('templates/form.html') #this isn't working #I added a templates directory so it should be good now
             self.response.out.write(first_template.render())

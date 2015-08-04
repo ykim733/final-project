@@ -53,8 +53,6 @@ class MainHandler(webapp2.RequestHandler):
             self.response.out.write(essayText.essay)
             #self.response.out.write(user) use this to view key after hitting submit
 
-<<<<<<< HEAD
-
             userlogin = True
             if userlogin:
                 self.response.out.write("<h1>Welcome!</h1>")
@@ -62,7 +60,7 @@ class MainHandler(webapp2.RequestHandler):
                 self.response.out.write("Please login")
             template = jinja_environment.get_template('form.html')
             self.response.write(template.render())
-=======
+
 class ArchiveHandler(webapp2.RequestHandler):
     def get(self):
          archive_template = jinja_environment.get_template('templates/archive.html')
@@ -76,8 +74,6 @@ class ArchiveHandler(webapp2.RequestHandler):
         #     self.response.out.write("Please login")
         # template = jinja_environment.get_template('form.html')
         # self.response.write(template.render())
->>>>>>> a11cda2261525b46f462a7339b4b49cac2bb766e
-
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),

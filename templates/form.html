@@ -71,26 +71,46 @@
 <button type="button" class="btn btn-default" aria-label="Left Align">
   <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
 </button>
-
-
-
-      <form>
-        <input type="text" id="txt">
-        <input type="button" value="Start stopwatch" onClick="timedCount()">
-        <p>Click on the Start button above to start the stopwatch.</p>
-      </form> <center>
-
 <button type="button" class="btn btn-default" aria-label="Left Align">
   <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
 </button>
 </div>
 
-    <form action="/" method="post">
-        <textarea id="essay" class="form-control" rows="40" name="essay_text" background-color= "transparent" placeholder="Write something legit, yo" >
-        </textarea>
-          <input type="submit" id="button"  name="essay_button" class="btn btn-primary btn-lg btn-block" value="Save Essay">
-        <!-- add save to archive option button -->
-            </form>
+
+<form action="/" method="post">
+    <textarea id="essay" class="form-control" rows="40" name="essay_text" background-color= "transparent" placeholder="Write something legit, yo" >
+    </textarea>
+      <input type="submit" id="button"  name="essay_button" class="btn btn-primary btn-lg btn-block" value="Save Essay">
+    <!-- add save to archive option button -->
+        </form>
+
+
+
+<script type="text/javascript">
+ var c=120
+ var t
+ function stopCount() {
+   clearTimeout(t)
+ }
+ function timedCount()
+ {
+   document.getElementById('txt').value=c
+   c=c-1
+   if(c==-1)
+   {
+     alert("time over")
+     stopcount()
+   }
+   t=setTimeout("timedCount()",1000)
+ }
+ </script>
+ <body>
+  <center>
+    <form>
+      <input type="text" id="txt">
+      <input type="button" value="Start stopwatch" onClick="timedCount()">
+      <p>Click on the Start button above to start the stopwatch.</p>
+    </form> <center>
 
   <br>
 

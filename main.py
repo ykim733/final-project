@@ -23,7 +23,8 @@ class EssayModel(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.out.write("Hello world")
+        welcome_template = jinja_environment.get_template('templates/welcome.html')
+        self.response.out.write(welcome_template.render())
 
 class EssayHandler(webapp2.RequestHandler):
 

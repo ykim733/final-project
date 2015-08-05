@@ -22,22 +22,6 @@ $(document).ready(function()
       };
   } )
 
-  // var c=10
-  // var t
-  // function stopCount() {
-  //   clearTimeout(t)
-  // }
-  // function timedCount()
-  // {
-  //   document.getElementById('txt').value=c
-  //   c=c-1
-  //   if(c==-1)
-  //   {
-  //     alert("You've unlocked a game break! http://patorjk.com/games/snake/")
-  //     stopcount()
-  //   }
-  //   t=setTimeout("timedCount()",1000)
-  // }
 
 
 

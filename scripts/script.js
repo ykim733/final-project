@@ -53,8 +53,6 @@ function enableTab(id) {
 // ... for a textarea that has an `id="my-textarea"`
 enableTab('essay');
 
-
-$('#pacman').delay(3000).fadeIn('fast').delay(3000).fadeOut('fast');
 // $("button").click(function(){
 //     $("#pacman").fadeOut(3000);
 // });

@@ -19,9 +19,10 @@
 </ul>
 <br>
 <br>
-  HERE IS YOUR ARCHIVE
-  #display a image that, when clicked, will open a saved work.
-  #the image can have the date of the work underneath it.
+  <h1>Here is Your Archive</h1>
+  {% for essay in essays%}
+  <div id = "archive_essays"> <p>{{essay.essay}}<p> </div>
+    {%endfor%}
 <br>
 <br>
 <form action="/" method="post">

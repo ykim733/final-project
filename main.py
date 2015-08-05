@@ -7,10 +7,8 @@ import threading
 from google.appengine.api import users
 import sys
 
-
 jinja_environment = jinja2.Environment(loader=
     jinja2.FileSystemLoader(os.path.dirname(__file__)))
-
 
 
 class UserModel(ndb.Model):
@@ -24,24 +22,17 @@ class MainHandler(webapp2.RequestHandler):
 
     def get(self):
 
-            first_template = jinja_environment.get_template('templates/form.html') 
+            first_template = jinja_environment.get_template('templates/form.html')
             self.response.out.write(first_template.render())
 
             user = users.get_current_user()
 
             if user:
-
-
                 self.response.write(user)
                 user = UserModel(currentUser = user.user_id())
                 user.put()
-
             else:
-
-
                 self.redirect(users.create_login_url(self.request.uri))
-
-
 
     def post(self):
         user_essay_text = self.request.get("essay_text")
@@ -49,8 +40,6 @@ class MainHandler(webapp2.RequestHandler):
 
         essay = EssayModel(essay = user_essay_text)
         essay.put()
-
-
 
 
 class ArchiveHandler(webapp2.RequestHandler):

@@ -92,6 +92,7 @@ body {
 #pacman{
   width: auto;
   text-align: center;
+  margin:auto;
 }
 #font_size{
   margin-right: 15%;
@@ -109,7 +110,17 @@ body {
   background-color: transparent;
   resize: none;
   font-size: 22px;
-  
 
+
+
+}
+
+#start_time{
+  color: black
+
+}
+
+#txt{
+  color: black
 
 }

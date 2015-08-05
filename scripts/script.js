@@ -55,7 +55,6 @@ function enableTab(id) {
 enableTab('essay');
 
 
-
 // $("button").click(function(){
 //     $("#pacman").fadeOut(3000);
 // });

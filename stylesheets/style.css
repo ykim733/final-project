@@ -1,8 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
 body {
-
-  background-image: url("http://media.tumblr.com/tumblr_mcbowjIr5E1qjs3ry.png");
+  background-image: url("http://www.pageresource.com/wallpapers/wallpaper/texture-ground-back-white-textured-textureimages_1175896.jpg"), url("http://www.wallpapersonview.com/wallpapers/4/abstract_colorful_textures_widescreen_desktop_background_picture-306.jpg");
+    background-repeat: repeat-x, repeat;
   /*background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -10,6 +10,15 @@ body {
   background-color: #464646;
   text-align: center; width: 100%;
   font-family: "Josefin Sans";
+}
+
+.menu {
+  background:#00a;
+  color:#fff;
+  height:60px;
+  line-height:40px;
+  letter-spacing:1px;
+  width:100%;
 }
 
 #text_edit {
@@ -80,7 +89,10 @@ body {
   text-align: left;
 }
 
-
+#pacman{
+  width: auto;
+  text-align: center;
+}
 #font_size{
   margin-right: 15%;
   width: 20%;

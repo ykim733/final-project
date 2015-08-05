@@ -3,7 +3,6 @@ $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').
 
 scrollIntervalID = setInterval(stickIt, 10);
 
-
 function stickIt() {
 
   var orgElementPos = $('.original').offset();
@@ -55,11 +54,12 @@ function enableTab(id) {
 enableTab('essay');
 
 
-$("button").click(function(){
-    $("#pacman").fadeOut(3000);
-});
-
-$("button").click(function(){
-    $("#pacman").fadeIn(3000);
-
-});
+$('#pacman').delay(3000).fadeIn('fast').delay(3000).fadeOut('fast');
+// $("button").click(function(){
+//     $("#pacman").fadeOut(3000);
+// });
+//
+// $("button").click(function(){
+//     $("#pacman").fadeIn(3000);
+//
+// });

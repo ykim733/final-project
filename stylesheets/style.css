@@ -92,6 +92,7 @@ body {
 #pacman{
   width: auto;
   text-align: center;
+  display: none;
 }
 #font_size{
   margin-right: 15%;

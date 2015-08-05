@@ -38,6 +38,7 @@ class EssayHandler(webapp2.RequestHandler):
             if user:
 
 
+                self.response.write("Welcome, ")
                 self.response.write(user)
                 user = UserModel(currentUser = user.user_id())
                 user.put()

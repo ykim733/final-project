@@ -37,6 +37,7 @@ class EssayHandler(webapp2.RequestHandler):
                 self.redirect(users.create_login_url(self.request.uri))
 
 # class SaveHandler(webapp2.RequestHandler):
+
     def post(self):
         user_essay_text = self.request.get("essay_text")
 
@@ -46,10 +47,16 @@ class EssayHandler(webapp2.RequestHandler):
         self.response.out.write(redirect_template.render())
 
 class ArchiveHandler(webapp2.RequestHandler):
+    all = EssayModel(essay = 'this is an essay')
+    print all
     def get(self):
-         archive_template = jinja_environment.get_template('templates/archive.html')
-         self.response.out.write(archive_template.render())
-         userlogin = True
+        #q = Person.all()
+#q.filter("last_name =", "Smith")
+
+            all_essays = EssayModel.query().fetch()
+            #  all_essays.filter('essay')
+            archive_template = jinja_environment.get_template('templates/archive.html')
+            self.response.out.write(archive_template.render({'essays': all_essays}))
 
 class MessageHandler(webapp2.RequestHandler):
     def get(self):

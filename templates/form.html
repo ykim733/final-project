@@ -14,24 +14,25 @@
         var t
         function stopCount() {
           clearTimeout(t)
-        }
+        };
         function timedCount()
         {
-          document.getElementById('txt').value=c
+          document.getElementById('txt').value=3
           c=c-1
           if(c==-1)
-          {
+            {
             alert("You've unlocked a game break!")
            //  use visible true or visible false
            //  or fade in a button when it is ready to play
-            stopcount()
-          }
+            stopCount()
+          };
           t=setTimeout("timedCount()",1000)
         }
        //  every 5 seconds send it to datastore--periodically send a post request
         </script>
          <center>
            <form>
+             <!-- <p> "You have" c "seconds" </p> -->
              <input type="text" id="txt">
              <input id="start_time" type="button" value="Start stopwatch" onClick="timedCount()">
            </form> <center>

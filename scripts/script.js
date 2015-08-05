@@ -23,7 +23,7 @@
       };
 
 
-       $(function() {
+       function () {
            $("#essay").on("button", function(e) {
                e.preventDefault()
                 });

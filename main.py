@@ -50,11 +50,11 @@ class EssayHandler(webapp2.RequestHandler):
 # class SaveHandler(webapp2.RequestHandler):
     def post(self):
         user_essay_text = self.request.get("essay_text")
-        self.response.write("my essay text is : " + user_essay_text)
 
         essay = EssayModel(essay = user_essay_text)
         essay.put()
-
+        redirect_template = jinja_environment.get_template('templates/form.html')
+        self.response.out.write(redirect_template.render())
 
 
 

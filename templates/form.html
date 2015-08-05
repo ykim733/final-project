@@ -11,9 +11,10 @@
 <body>
 <span>
   <ul class="nav nav-pills" id="navigation">
-  <li role="presentation" class="active"><a href="/">Home</a></li>
+  <li role="presentation" class="active"><a href="write">Home</a></li>
   <li role="presentation"><a href="myessays">Archive</a></li>
   <li role="presentation"><a href="references">References</a></li>
+  <li role="presentation"><a href="/">Change Time</a></li>
   <button type="button" class="btn btn-default" aria-label="Left Align" id="logout_button">
   <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
 </button>
@@ -77,7 +78,7 @@
 </div>
 
 
-<form action="/" method="post">
+<form action="/write" method="post">
     <textarea id="essay" class="form-control" rows="40" name="essay_text" background-color= "transparent" placeholder="Write something legit, yo" >
     </textarea>
       <input type="submit" id="button"  name="essay_button" class="btn btn-primary btn-lg btn-block" value="Save Essay">
@@ -103,6 +104,8 @@
    }
    t=setTimeout("timedCount()",1000)
  }
+ 
+
  </script>
  <body>
   <center>

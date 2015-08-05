@@ -22,6 +22,11 @@ class EssayModel(ndb.Model):
     essay = ndb.TextProperty(required = True)
 
 class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        welcome_template = jinja_environment.get_template('templates/welcome.html')
+        self.response.out.write(welcome_template.render())
+
+class EssayHandler(webapp2.RequestHandler):
 
     def get(self):
 
@@ -68,6 +73,7 @@ class MessageHandler(webapp2.RequestHandler):
         self.response.out.write(message_template.render())
 
 app = webapp2.WSGIApplication([
+    ('/write', EssayHandler),
     ('/', MainHandler),
     ('/myessays', ArchiveHandler),
     ('/references', MessageHandler)

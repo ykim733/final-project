@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function()
   function enableTab(id) {
       var el = document.getElementById(id);
       el.onkeydown = function(e) {
@@ -20,7 +20,26 @@ $(document).ready(function() {
 
           }
       };
-  }
+  } )
+
+  // var c=10
+  // var t
+  // function stopCount() {
+  //   clearTimeout(t)
+  // }
+  // function timedCount()
+  // {
+  //   document.getElementById('txt').value=c
+  //   c=c-1
+  //   if(c==-1)
+  //   {
+  //     alert("You've unlocked a game break! http://patorjk.com/games/snake/")
+  //     stopcount()
+  //   }
+  //   t=setTimeout("timedCount()",1000)
+  // }
+
+
 
   // Enable the tab character onkeypress (onkeydown) inside textarea...
   // ... for a textarea that has an `id="my-textarea"`
@@ -30,8 +49,6 @@ $(document).ready(function() {
       var x = $('#description-box');
       if (x.css("font-weight") !== "bold") {
          (x.css("font-weight", "bold"))
-       else 
-          (x.css("font-weight", "normal");
+
       }
   }
-}

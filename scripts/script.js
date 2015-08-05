@@ -21,6 +21,13 @@ $(document).ready(function()
           }
       };
   } )
+  
+       $(function() {
+           $("#essay").on("button", function(e) {
+               e.preventDefault()
+                });
+             });
+
 
 
 
@@ -34,5 +41,12 @@ $(document).ready(function()
       if (x.css("font-weight") !== "bold") {
          (x.css("font-weight", "bold"))
 
+
+      $function e(){
+         e.preventDefault()
+         $.post(essay)
+         }
+
+)
       }
   }

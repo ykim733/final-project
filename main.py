@@ -37,18 +37,16 @@ class EssayHandler(webapp2.RequestHandler):
 
             if user:
 
-
                 self.response.write(user)
                 user = UserModel(currentUser = user.user_id())
                 user.put()
 
             else:
 
-
                 self.redirect(users.create_login_url(self.request.uri))
 
 
-
+# class SaveHandler(webapp2.RequestHandler):
     def post(self):
         user_essay_text = self.request.get("essay_text")
         self.response.write("my essay text is : " + user_essay_text)
@@ -75,6 +73,7 @@ class MessageHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/write', EssayHandler),
+    # ('/save', SaveHandler),
     ('/myessays', ArchiveHandler),
     ('/references', MessageHandler)
 ], debug=True)

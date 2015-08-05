@@ -7,7 +7,36 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css"></link>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
   <link href= "/stylesheets/style.css" rel="stylesheet" type="text/css"/>
-   <div class="menu">Timer Goes Here</div>
+   <div class="menu">
+
+   <script type="text/javascript">
+        var c=3
+        var t
+        function stopCount() {
+          clearTimeout(t)
+        }
+        function timedCount()
+        {
+          document.getElementById('txt').value=c
+          c=c-1
+          if(c==-1)
+          {
+            alert("You've unlocked a game break!")
+           //  use visible true or visible false
+           //  or fade in a button when it is ready to play
+            stopcount()
+          }
+          t=setTimeout("timedCount()",1000)
+        }
+       //  every 5 seconds send it to datastore--periodically send a post request
+        </script>
+         <center>
+           <form>
+             <input type="text" id="txt">
+             <input id="start_time" type="button" value="Start stopwatch" onClick="timedCount()">
+           </form> <center>
+
+   </div>
 </head>
 
 <body>
@@ -52,34 +81,33 @@ tinymce.init({
     <input type="submit" id="button"  name="essay_button" class="btn btn-primary btn-lg btn-block" value="Save Essay">
 </form>
 
-    <script type="text/javascript">
-         var c=120
-         var t
-         function stopCount() {
-           clearTimeout(t)
-         }
-         function timedCount()
-         {
-           document.getElementById('txt').value=c
-           c=c-1
-           if(c==-1)
-           {
-             alert("You've unlocked a game break!")
-            //  use visible true or visible false
-            //  or fade in a button when it is ready to play
-             stopcount()
-           }
-           t=setTimeout("timedCount()",1000)
-         }
-        //  every 5 seconds send it to datastore--periodically send a post request
-         </script>
-         <body>
-          <center>
-            <form>
-              <input type="text" id="txt">
-              <input type="button" value="Start stopwatch" onClick="timedCount()">
-              <p>Click on the Start button above to start the stopwatch.</p>
-            </form> <center>
+    <!-- // <script type="text/javascript"> -->
+    <!-- //      var c=120
+    //      var t
+    //      function stopCount() {
+    //        clearTimeout(t)
+    //      }
+    //      function timedCount()
+    //      {
+    //        document.getElementById('txt').value=c
+    //        c=c-1
+    //        if(c==-1)
+    //        {
+    //          alert("You've unlocked a game break!")
+    //         //  use visible true or visible false
+    //         //  or fade in a button when it is ready to play
+    //          stopcount()
+    //        }
+    //        t=setTimeout("timedCount()",1000)
+    //      }
+    //     //  every 5 seconds send it to datastore--periodically send a post request
+    //      </script>
+    //       <center>
+    //         <form>
+    //           <input type="text" id="txt">
+    //           <input type="button" value="Start stopwatch" onClick="timedCount()">
+    //           <p>Click on the Start button above to start the stopwatch.</p>
+    //         </form> <center> -->
 <br>
 
 <div id="pacman">

@@ -44,6 +44,7 @@ class EssayHandler(webapp2.RequestHandler):
         essay.put()
         redirect_template = jinja_environment.get_template('templates/form.html')
         self.response.out.write(redirect_template.render())
+        time = self.request.get("user_time")
 
 class ArchiveHandler(webapp2.RequestHandler):
     def get(self):

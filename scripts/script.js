@@ -36,6 +36,7 @@ function enableTab(id) {
                 start = this.selectionStart,
                 end = this.selectionEnd;
 
+
             // set textarea value to: text before caret + tab + text after caret
             this.value = val.substring(0, start) + '\t' + val.substring(end);
 

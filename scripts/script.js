@@ -3,7 +3,6 @@ $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').
 
 scrollIntervalID = setInterval(stickIt, 10);
 
-
 function stickIt() {
 
   var orgElementPos = $('.original').offset();
@@ -53,7 +52,6 @@ function enableTab(id) {
 // Enable the tab character onkeypress (onkeydown) inside textarea...
 // ... for a textarea that has an `id="my-textarea"`
 enableTab('essay');
-
 
 // $("button").click(function(){
 //     $("#pacman").fadeOut(3000);

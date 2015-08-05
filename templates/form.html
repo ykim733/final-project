@@ -34,7 +34,7 @@
     <form>
       <input type="number" id="txt" name="user_time">
       <input type="button" id="theButton" value="Start stopwatch" onClick="startCount()">
-      <p>Click on the Start button above to start the stopwatch.</p>
+
     </form> <center>
 
     <script type="text/javascript">
@@ -56,7 +56,7 @@
            {
              alert("Time's up! Scroll down to play your game!")
 
-             $("#pacman").delay(c*1000+1000).fadeIn("fast")//.delay(3000).fadeOut("fast");
+             $("#pacman").delay(c*1000+3000).fadeIn("fast").delay(c*1000+1000+17*1000).fadeOut("fast");
              return;
             //  use visible true or visible false
             //  or fade in a button when it is ready to play

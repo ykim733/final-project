@@ -1,4 +1,5 @@
-$(document).ready(function()
+// $(document).ready(function()
+
   function enableTab(id) {
       var el = document.getElementById(id);
       el.onkeydown = function(e) {
@@ -20,8 +21,8 @@ $(document).ready(function()
 
           }
       };
-  } )
-  
+
+
        $(function() {
            $("#essay").on("button", function(e) {
                e.preventDefault()

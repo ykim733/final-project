@@ -3,7 +3,6 @@ $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').
 
 scrollIntervalID = setInterval(stickIt, 10);
 
-
 function stickIt() {
 
   var orgElementPos = $('.original').offset();
@@ -54,8 +53,6 @@ function enableTab(id) {
 // ... for a textarea that has an `id="my-textarea"`
 enableTab('essay');
 
-
-
 // $("button").click(function(){
 //     $("#pacman").fadeOut(3000);
 // });
@@ -64,3 +61,14 @@ enableTab('essay');
 //     $("#pacman").fadeIn(3000);
 //
 // });
+
+$(window).bind("scroll", function() {
+        if ($(this).scrollTop() > 800) {
+            $("#game_center").fadeIn(1000);
+        }
+        else {
+            $("#game_center").stop().fadeOut('3000');
+        }
+    });
+
+$('.carousel').carousel()

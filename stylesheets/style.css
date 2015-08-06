@@ -117,6 +117,9 @@ body {
   margin-left: 10px;
   text-align: right;
 }
+#logo{
+  text-align:center;
+}
 
 #embed_template{
   width: 70%;

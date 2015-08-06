@@ -108,7 +108,7 @@ body {
 
 #pacman{
   width: auto;
-  text-align: center;
+  align: center;
   display: none;
 }
 #font_size{

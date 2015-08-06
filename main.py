@@ -50,7 +50,7 @@ class EssayHandler(webapp2.RequestHandler):
 
 class ArchiveHandler(webapp2.RequestHandler):
     all = EssayModel(essay = 'this is an essay')
-    print all
+    #print all
     def get(self):
         #q = Person.all()
 #q.filter("last_name =", "Smith")
@@ -76,11 +76,12 @@ class RemoveHandler(webapp2.RequestHandler):
     def post(self):
         essay_id = self.request.get("essay_id")
         essay_key = ndb.Key(EssayModel, int(essay_id))
-        essay_title = self.request.get("essay_title")
-        #self.response.out.write(essay_title)
+        essay = essay_key.get()
+        essay_title = essay.title
+
         users_essay = essay_key.delete()
         view_template = jinja_environment.get_template('templates/remove.html')
-        
+
         self.response.out.write(view_template.render({"essay_title": essay_title}))
         # self.response.out.write(essay_key)
         # self.response.out.write(users_essay)

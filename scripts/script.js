@@ -71,4 +71,4 @@ $(window).bind("scroll", function() {
         }
     });
 
-$('.carousel').carousel()
+$('.carousel')89uh'u/0.carousel()

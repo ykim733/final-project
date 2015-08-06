@@ -38,7 +38,7 @@
     </form> <center>
 
     <script type="text/javascript">
-        //$("#pacman").fadeOut("fast");
+        $("#pacman").fadeOut("fast");
          var c
          var t
          function startCount(){
@@ -50,7 +50,12 @@
          }
          function timedCount()
          {
+
            document.getElementById('txt').value=c;
+           if (c<=-1 || !c){
+             alert("Please enter a positive number")
+             return;
+           }
            c=c-1
            if(c==-1)
            {

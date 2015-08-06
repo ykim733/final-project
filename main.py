@@ -71,6 +71,15 @@ class ViewHandler(webapp2.RequestHandler):
         users_essay = essay_key.get()
         view_template = jinja_environment.get_template('templates/essay_view.html')
         self.response.out.write(view_template.render({"essay" : users_essay}))
+
+    def post(self):
+        essay_id = self.request.get("essay_id")
+        essay_key = ndb.Key(EssayModel, int(essay_id))
+        essay_title = self.request.get("essay_title")
+        #self.response.out.write(essay_title)
+        users_essay = essay_key.delete()
+        view_template = jinja_environment.get_template('templates/remove.html')
+        self.response.out.write(view_template.render({"essay_title": essay_title}))
         # self.response.out.write(essay_key)
         # self.response.out.write(users_essay)
 app = webapp2.WSGIApplication([
@@ -79,5 +88,6 @@ app = webapp2.WSGIApplication([
     # ('/save', SaveHandler),
     ('/myessays', ArchiveHandler),
     ('/references', MessageHandler),
-    ('/essay_view', ViewHandler)
+    ('/essay_view', ViewHandler),
+    ('/remove', ViewHandler)
 ], debug=True)

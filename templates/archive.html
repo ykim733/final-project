@@ -14,7 +14,7 @@
   <li role="presentation" class="active"><a href="write">Essay</a></li>
   <li role="presentation"><a href="myessays">Archive</a></li>
   <li role="presentation"><a href="references">References</a></li>
-  <li role="presentation"><a href="/">Change Time</a></li>
+  <li role="presentation"><a href="/">About</a></li>
   <li role="presentation" id="logout"><a href="">Logout</a></li>
 </ul>
   <h1>Here is Your Archive</h1>
@@ -22,15 +22,17 @@
   {% for essay in essays%}
   <div id = "archive_essays"> <h3>{{essay.title}}</h3> </div>
     <form action="/essay_view" method="post">
-        <div><input type="submit" value="Get + {{essay.title}}"</div>
+        <div><input type="submit" value="Get {{essay.title}}"</div>
         <input type="hidden" name="essay_id" value={{essay.key.id()}}>
+        <br><br>
       </form>
-      <form action="/essay_view" method="post">
-          <div><input type="submit" value="Remove + {{essay.title}}"</div>
+      <form action="/remove" method="post">
+          <div><input type="submit" value="Remove {{essay.title}}"</div>
           <input type="hidden" name="essay_id" value={{essay.key.id()}}>
         </form>
     {%endfor%}
 <br>
 <br>
+
 </body>
 </html>

@@ -14,8 +14,9 @@ header{
 }
 
 body {
-  background-image: url("http://www.pageresource.com/wallpapers/wallpaper/texture-ground-back-white-textured-textureimages_1175896.jpg"), url("http://www.wallpapersonview.com/wallpapers/4/abstract_colorful_textures_widescreen_desktop_background_picture-306.jpg");
-    background-repeat: repeat-x, repeat;
+  background-image: url("http://www.pageresource.com/wallpapers/wallpaper/texture-ground-back-white-textured-textureimages_1175896.jpg");
+	position: static;
+    /*background-repeat: repeat-x, repeat;*/
   /*background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -150,4 +151,11 @@ body {
   background-size: auto;
   height: 200px;
   box-shadow: 0px 6px 7px #818181;
+}
+
+#Welcome_Paragraph {
+	color: darkblue;
+	font-size: 20px;
+	padding-left: 200px;
+	padding-right: 200px
 }

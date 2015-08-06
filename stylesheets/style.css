@@ -30,14 +30,20 @@ body {
 }
 
 .menu {
-  background:#00a;
-  color:#fff;
+  background:#00CCFF;
+  color:black;
   height:60px;
   line-height:40px;
   letter-spacing:1px;
   width:100%;
 }
-
+#welcome_button{
+	width: 200px;
+	height: 100px;
+	font-size: 22px;
+	background-color: #00CCFF;
+	border: solid 3px;
+}
 #text_edit {
   background-color: #CCC;
   margin-left: auto;
@@ -165,5 +171,8 @@ body {
 	font-size: 20px;
 	padding-left: 200px;
 	padding-right: 200px;
-	background-color: gray
+	background-color: gray;
+	height: 200px;
+	font-family: "Josefin Sans";
+	
 }

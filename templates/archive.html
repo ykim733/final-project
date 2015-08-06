@@ -15,9 +15,8 @@
   <li role="presentation"><a href="myessays">Archive</a></li>
   <li role="presentation"><a href="references">References</a></li>
   <li role="presentation"><a href="/">About</a></li>
-  <li role="presentation" id="logout"><a href="">Logout</a></li>
 </ul>
-  <h1>Here is Your Archive</h1>
+  <h1>Archive</h1>
   <br>
   {% for essay in essays%}
   <div id = "archive_essays"> <h3>{{essay.title}}</h3> </div>
@@ -27,9 +26,13 @@
         <br><br>
       </form>
       <form action="/remove" method="post">
-          <div><input type="submit" value="Remove {{essay.title}}"</div>
+          <div><input type="submit" value="Remove {{essay.title}}"></div>
           <input type="hidden" name="essay_id" value={{essay.key.id()}}>
         </form>
+        <br>
+        <br>
+        <br>
+      
     {%endfor%}
 <br>
 <br>

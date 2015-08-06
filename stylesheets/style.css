@@ -13,6 +13,9 @@ header{
 }
 }
 
+/*#title_form {
+  float: left;
+}*/
 body {
   background-image: url("http://www.pageresource.com/wallpapers/wallpaper/texture-ground-back-white-textured-textureimages_1175896.jpg");
 	position: static;
@@ -157,5 +160,6 @@ body {
 	color: darkblue;
 	font-size: 20px;
 	padding-left: 200px;
-	padding-right: 200px
+	padding-right: 200px;
+	background-color: gray
 }

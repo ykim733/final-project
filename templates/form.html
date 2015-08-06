@@ -7,9 +7,6 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css"></link>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
   <link href= "/stylesheets/style.css" rel="stylesheet" type="text/css"/>
-
-
-
 </head>
 
 <body>
@@ -19,10 +16,8 @@
   <li role="presentation"><a href="myessays">Archive</a></li>
   <li role="presentation"><a href="references">References</a></li>
   <li role="presentation"><a href="/">About</a></li>
-  <button type="button" class="btn btn-default" aria-label="Left Align" id="logout_button">
-  <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-</button>
-  <li role="presentation" id="logout"><a href="">Logout</a></li>
+
+
   <br>
   <br>
   <br>
@@ -74,10 +69,6 @@
 
        </div>
     </div>
-
-
-
-
 </span>
 
 </ul>
@@ -99,6 +90,7 @@ tinymce.init({
 </script>
 
 <form method="post" action="write">
+    <textarea id="title" name="essay_title" class="form-control" rows="1" background-color="transparent" placeholder="Title" style="width:50%" ></textarea>
     <textarea id="essay" name="essay_text" class="form-control" rows="40" background-color="transparent" placeholder="write something legit, yo" style="width:50%" ></textarea>
   </div>
   <br><br>
@@ -176,9 +168,46 @@ google.dom.append(a)}}function e(){if(document.f&&document.f.btnI)document.f.btn
  })();
 </script>
 </div>
+<br>
+<br>
+<br>
+<br>
+<!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <center><img src="http://www.borneodivers.info/wp-content/uploads/2015/03/keep-calm-and-play-trivia.png" alt="Trivia Game"><button type="button">Go to Trivia!<button></center>
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://www.cube26.com/career-img/Android_interns.svg" alt="Where's Android?">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div> -->
 </center>
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="scripts/script.js"></script>
 </body>

@@ -4,13 +4,14 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="script.js"></script>
+  <script src="loader.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css"></link>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
   <link href= "/stylesheets/style.css" rel="stylesheet" type="text/css"/>
-
+  </script>
 </head>
-
 <body>
+  <div class="se-pre-con"></div>
 <span>
   <ul class="nav nav-pills" id="navigation">
   <li role="presentation" class="active"><a href="write">Essay</a></li>
@@ -24,10 +25,12 @@
   <br>
   <br>
   <br>
+  <h1>Writer's Block</h1>
   <br>
-  <h1>Essay</h1>
-  <div>
-  <div class="menu">
+    <div class="menu">
+      <form>
+        <input type="number" id="txt" name="user_time">
+        <input type="button" id="theButton" value="Start stopwatch" onClick="startCount()">
   <script type="text/javascript">
        var c=3
        var t
@@ -49,19 +52,10 @@
        }
       //  every 5 seconds send it to datastore--periodically send a post request
        </script>
-       <div id="formcontainer">
-       <form>
-         <input type="text" id="txt">
-         <input id="start_time" type="button" value="Start stopwatch" onClick="timedCount()">
-       </form>
-       </div>
   </div>
 </div>
   <div>
-  <div class="menu">
-    <form>
-      <input type="number" id="txt" name="user_time">
-      <input type="button" id="theButton" value="Start stopwatch" onClick="startCount()">
+
 
     </form> <center>
 
@@ -124,9 +118,18 @@ tinymce.init({
     <input type="submit" id="button"  name="essay_button" class="btn btn-primary btn-lg btn-block" value="Save Essay">
 </form>
 <br>
+<br>
+<br>
+<br>
+<div id="game_center">
+<h1> Game Center</h1>
+</div>
+<br>
+<br>
+<br>
 
 <div id="pacman">
-<script>window.google={kEI:"Quz2S63qIYeglAfw8oHGCg",kEXPI:"17259,23663,24477,24661,24745,24770,24808",kCSI:{e:"17259,23663,24477,24661,24745,24770,24808",ei:"Quz2S63qIYeglAfw8oHGCg",expi:"17259,23663,24477,24661,24745,24770,24808"},ml:function(){},pageState:"#",kHL:"en",time:function(){return(new Date).getTime()},log:function(b,d,c){var a=new Image,e=google,g=e.lc,f=e.li;a.onerror=(a.onload=(a.onabort=function(){delete g[f]}));g[f]=a;c=c||"/gen_204?atyp=i&ct="+b+"&cad="+d+"&zx="+google.time();a.src=c;e.li=f+1},lc:[],li:0,j:{en:1,l:function(){},e:function(){},b:location.hash&&location.hash!="#",bv:3,pl:[],mc:0,sc:0.5},Toolbelt:{}};(function(){for(var d=0,c;c=["ad","bc","p","pa","zd","ac","pc","pah","ph","sa","xx","zc","zz"][d++];)(function(a){google.j[a]=function(){google.j.pl.push([a,arguments])}})(c)})();
+<center><script>window.google={kEI:"Quz2S63qIYeglAfw8oHGCg",kEXPI:"17259,23663,24477,24661,24745,24770,24808",kCSI:{e:"17259,23663,24477,24661,24745,24770,24808",ei:"Quz2S63qIYeglAfw8oHGCg",expi:"17259,23663,24477,24661,24745,24770,24808"},ml:function(){},pageState:"#",kHL:"en",time:function(){return(new Date).getTime()},log:function(b,d,c){var a=new Image,e=google,g=e.lc,f=e.li;a.onerror=(a.onload=(a.onabort=function(){delete g[f]}));g[f]=a;c=c||"/gen_204?atyp=i&ct="+b+"&cad="+d+"&zx="+google.time();a.src=c;e.li=f+1},lc:[],li:0,j:{en:1,l:function(){},e:function(){},b:location.hash&&location.hash!="#",bv:3,pl:[],mc:0,sc:0.5},Toolbelt:{}};(function(){for(var d=0,c;c=["ad","bc","p","pa","zd","ac","pc","pah","ph","sa","xx","zc","zz"][d++];)(function(a){google.j[a]=function(){google.j.pl.push([a,arguments])}})(c)})();
  window.google.sn="webhp";window.google.timers={load:{t:{start:(new Date).getTime()}}};try{window.google.pt=window.gtbExternal&&window.gtbExternal.pageT();}catch(u){}window.google.jsrt_kill=1;
  </script>
  <style>
@@ -177,10 +180,56 @@ google.dom.append(a)}}function e(){if(document.f&&document.f.btnI)document.f.btn
  var b,d,e,f;function g(a,c){if(a.removeEventListener){a.removeEventListener("load",c,false);a.removeEventListener("error",c,false)}else{a.detachEvent("onload",c);a.detachEvent("onerror",c)}}function h(a){f=(new Date).getTime();++d;a=a||window.event;var c=a.target||a.srcElement;g(c,h)}var i=document.getElementsByTagName("img");b=i.length;d=0;for(var j=0,k;j<b;++j){k=i[j];if(k.complete||typeof k.src!="string"||!k.src)++d;else if(k.addEventListener){k.addEventListener("load",h,false);k.addEventListener("error",
  h,false)}else{k.attachEvent("onload",h);k.attachEvent("onerror",h)}}e=b-d;function l(){google.timers.load.t.ol=(new Date).getTime();google.timers.load.t.iml=f;google.kCSI.imc=d;google.kCSI.imn=b;google.kCSI.imp=e;google.report&&google.report(google.timers.load,google.kCSI)}if(window.addEventListener)window.addEventListener("load",l,false);else if(window.attachEvent)window.attachEvent("onload",l);google.timers.load.t.prt=(f=(new Date).getTime());
  })();
-</script>
+</script></center>
+<br>
+<p>Writing your essay with a buddy? <br>Double-click "Insert Coin" for a two-player game!</p>
 </div>
+<br>
+<br>
+<br>
+<br>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <center><img src="http://www.borneodivers.info/wp-content/uploads/2015/03/keep-calm-and-play-trivia.png" alt="Trivia Game"><button type="button">Go to Trivia!<button></center> 
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://www.cube26.com/career-img/Android_interns.svg" alt="Where's Android?">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="scripts/script.js"></script>
+
+<br>
+<br>
+<br><br>
+<br>
+<br>
 </body>
 </html>

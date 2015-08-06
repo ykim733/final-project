@@ -21,15 +21,16 @@
   {% for essay in essays%}
   <div id = "archive_essays"> <p>{{essay.title}}<p> </div>
     <form action="/essay_view" method="post">
-
+      
         <br><br>
         <div><input type="submit" value="Get" + {{essay.title}}</div>
         <input type="hidden" name="essay_id" value={{essay.key.id()}}>
-        <!-- add save to archive option button -->
+
 
       </form>
     {%endfor%}
 <br>
 <br>
+
 </body>
 </html>

@@ -90,6 +90,9 @@ body {
   resize: none;
   font-size: 22px;
 }
+#title{
+  width:70%;
+}
 
 #button{
   margin: auto;
@@ -110,6 +113,7 @@ body {
   width: auto;
   align: center;
   display: none;
+
 }
 #font_size{
   margin-right: 15%;

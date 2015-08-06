@@ -13,6 +13,9 @@ header{
 }
 }
 
+/*#title_form {
+  float: left;
+}*/
 body {
   background-image: url("http://www.pageresource.com/wallpapers/wallpaper/texture-ground-back-white-textured-textureimages_1175896.jpg"), url("http://www.wallpapersonview.com/wallpapers/4/abstract_colorful_textures_widescreen_desktop_background_picture-306.jpg");
     background-repeat: repeat-x, repeat;

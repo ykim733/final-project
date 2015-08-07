@@ -3,25 +3,32 @@
 <head>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css"></link>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <!-- // <script src="scripts/script.js"></script> -->
-
+  <!--<script src="scripts/script.js"></script> -->
   <link href= "/stylesheets/style.css" rel="stylesheet" type="text/css"/>
+  <title>Word Play</title>
+  
 </head>
 <body>
+    <div class="menu" id="menu_buttons">
   <ul class="nav nav-pills" id="navigation">
-  <li role="presentation" class="active"><a href="write">Essay</a></li>
+  <li role="presentation" class="active"><a href="write">Home</a></li>
   <li role="presentation"><a href="myessays">Archive</a></li>
-  <li role="presentation"><a href="references">References</a></li>
-  <li role="presentation"><a href="/">Change Time</a></li>
+  <li role="presentation"><a href="about">About</a></li>
+  <img src="images/turquoise_wordplay.jpg" id="logo_menu"</img>
+
+</div>
 </ul>
 <br>
 <br>
  <h1>{{essay.title}}</h1>
 <br>
+<div id="essay_view">
 {{essay.essay}}
     <br><br>
-    <form action="/myessays">
-  <input type="submit" value="Back to Archive Menu">
+</div>
+<br>
+<form action="/myessays">
+<input id="back_button_view" type="submit" value="Back to Archive Menu">
 </form>
 </body>
 </html>

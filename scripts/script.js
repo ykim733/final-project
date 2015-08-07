@@ -48,20 +48,9 @@ function enableTab(id) {
     };
 }
 
-
-
-// $("button").click(function(){
-//     $("#pacman").fadeOut(3000);
-// });
-//
-// $("button").click(function(){
-//     $("#pacman").fadeIn(3000);
-//
-// });
-
 $(window).bind("scroll", function() {
-        if ($(this).scrollTop() > 800) {
-            $("#game_center").fadeIn(1000);
+        if ($(this).scrollTop() > 1000) {
+            $("#game_center").fadeIn(3000);
         }
         else {
             $("#game_center").stop().fadeOut('3000');

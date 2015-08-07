@@ -32,7 +32,7 @@
 <div>
   <br>
   <br>
-  <img src="http://i62.tinypic.com/2lt3fhy.jpg" id="wordplay_logo"</img>
+  <img src="http://i62.tinypic.com/2lt3fhy.jpg" id="wordplay_logo"></img>
   <br>
   <br>
   <h1>Writer's Block</h1>
@@ -51,11 +51,13 @@
          function timedCount()
          {
            if (c<=-1 || !c){
+
              alert("Please enter a positive number")
              return;
            }
            c=c-1;
            document.getElementById('txt').value=c;
+
            if(c==0)
            {
              alert("Time's up! Scroll down to play your game!")
@@ -106,6 +108,7 @@ tinymce.init({
 <br>
 <br>
 <div id="#game_center"><h1>Game Center</h1></div>
+
 <br>
 <br>
     <!-- <center> -->
@@ -169,6 +172,6 @@ Working with a buddy? Doubleclick for a two-player game!
 <br>
 <br>
 <br>
-<br><br>
+
 </body>
 </html>

@@ -83,7 +83,7 @@ body {
 	background-color: white;
 	width: 70%;
 	margin: auto;
-	text-align: left
+	text-align: left;
 	padding: 10px;
 }
 #title{
@@ -110,10 +110,10 @@ body {
 }
 
 #pacman{
-  width: auto;
-  align: center;
+  width: 554px;
+	height: 250px;
   display: none;
-
+	margin: auto;
 }
 #font_size{
   margin-right: 15%;
@@ -122,16 +122,16 @@ body {
   margin-left: 10px;
   text-align: right;
 }
-#logo{
+#wordplay_logo{
   text-align:center;
-	width: 35%;
+	width: 27%;
 	height: 150px;
 }
 
 #logo_menu {
 	float: right;
 	right: 5px;
-	width: 12%;
+	width: 10%;
 	height: 60px;
 }
 #embed_template{
@@ -237,4 +237,9 @@ body {
 	margin: auto;
 	text-align: center;
 	color: #F2F2F2;
+}
+
+#pacman * {
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
 }

@@ -1,35 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
-header{
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
+
+#timer_button {
+	float: right;
+	text-align: right;
 	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url(Preloader_5.gif) center no-repeat #fff;
-}
+	right: 0px;
 }
 
-/*#title_form {
-  float: left;
-}*/
+#stopwatch {
+	background-color: #00CCFF;
+	color: #F2F2F2;
+}
+
 body {
-  background-image: url("http://www.pageresource.com/wallpapers/wallpaper/texture-ground-back-white-textured-textureimages_1175896.jpg");
+  /*background-image: url("http://www.pageresource.com/wallpapers/wallpaper/texture-ground-back-white-textured-textureimages_1175896.jpg");*/
 	position: static;
     /*background-repeat: repeat-x, repeat;*/
   /*background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;*/
-  background-color: #464646;
+  background-color: #F2F2F2;
   text-align: center; width: 100%;
   font-family: "Josefin Sans";
+	color: darkblue;
 }
 
 .menu {
+	font-family: "Josefin Sans";
   background:#00CCFF;
   color:black;
   height:60px;
@@ -42,7 +40,9 @@ body {
 	height: 100px;
 	font-size: 22px;
 	background-color: #00CCFF;
-	border: solid 3px;
+	border: none;
+	display: inline;
+	color: darkblue;
 }
 #text_edit {
   background-color: #CCC;
@@ -65,24 +65,6 @@ body {
   font-family: "Josefin Sans";
 }
 
-#navigation {
-  background-image: url("http://jeffreyhunt.com/wp-content/uploads/2013/10/4-Clouds-Background.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100%;
-  background-size: auto;
-  height: 209px;
-  box-shadow: 0px 6px 7px #818181;
-}
-
-
-#logout{
-  float:right;
-}
-#logout_button {
-  float: right;
-}
-
 #text_editor_buttons {
    background-color: transparent;
 }
@@ -96,15 +78,27 @@ body {
   resize: none;
   font-size: 22px;
 }
+
+#essay_view {
+	background-color: white;
+	width: 70%;
+	margin: auto;
+	text-align: left
+	padding: 10px;
+}
 #title{
   width:70%;
+	outline: none;
 }
 
 #button{
   margin: auto;
   width: 40%;
-  background-color: #B2B2CC;
+  background-color: #00CCFF;
   border: none;
+	height: 50px;
+	font-size: 20px;
+	color: #F2F2F2;
 }
 
 #fonts{
@@ -130,19 +124,28 @@ body {
 }
 #logo{
   text-align:center;
+	width: 35%;
+	height: 150px;
 }
 
+#logo_menu {
+	float: right;
+	right: 5px;
+	width: 12%;
+	height: 60px;
+}
 #embed_template{
   width: 70%;
   display: inline-block;
   text-align: left;
-  border: 3px solid #9494B8;
+  border: 3px solid darkblue;
   background-color: transparent;
   resize: none;
   font-size: 22px;
+	outline: none;
 }
 
-#thebutton {
+#stopwatch_button {
   color: black;
 }
 #start_time{
@@ -157,22 +160,81 @@ body {
 
 #game_center {
   display: none;
-  background-image: url("http://jeffreyhunt.com/wp-content/uploads/2013/10/4-Clouds-Background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   width: 100%;
   background-size: auto;
   height: 200px;
-  box-shadow: 0px 6px 7px #818181;
 }
 
 #Welcome_Paragraph {
 	color: darkblue;
 	font-size: 20px;
-	padding-left: 200px;
-	padding-right: 200px;
+	padding-left: 170px;
+	padding-right: 170px;
 	background-color: gray;
 	height: 200px;
 	font-family: "Josefin Sans";
-	
+	margin: auto;
+	text-align: center;
+
+}
+
+#carousel-example-generic {
+	width: 100%;
+	height: 300px;
+	margin-bottom: 0px;
+}
+
+#carousel_image{
+	height: 300px;
+	margin: auto;
+	text-align: center;
+}
+
+#get_button{
+	background-color: #00CCFF;
+	border: none;
+	width: 10%;
+	height: 30px;
+	font-size: 14px;
+	margin: auto;
+	text-align: center;
+	color: #F2F2F2;
+}
+
+#remove_button{
+	background-color: #00CCFF;
+	border: none;
+	display: inline;
+	width: 10%;
+	height: 30px;
+	font-size: 14px;
+	margin: auto;
+	text-align: center;
+	color: #F2F2F2;
+}
+
+#back_button_remove {
+	background-color: #00CCFF;
+	border: none;
+	display: inline;
+	width: 15%;
+	height: 40px;
+	font-size: 18px;
+	margin: auto;
+	text-align: center;
+	color: #F2F2F2;
+}
+
+#back_button_view {
+	background-color: #00CCFF;
+	border: none;
+	display: inline;
+	width: 15%;
+	height: 40px;
+	font-size: 18px;
+	margin: auto;
+	text-align: center;
+	color: #F2F2F2;
 }

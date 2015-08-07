@@ -31,13 +31,11 @@ class EssayHandler(webapp2.RequestHandler):
 
             if user:
                 self.response.write("Welcome, ")
-                self.response.write(user)
+                self.response.write(str(user) + '<br><br><br>')
                 user = UserModel(currentUser = user.user_id())
                 user.put()
             else:
                 self.redirect(users.create_login_url(self.request.uri))
-
-# class SaveHandler(webapp2.RequestHandler):
 
     def post(self):
         user_essay_text = self.request.get("essay_text")
@@ -59,9 +57,9 @@ class ArchiveHandler(webapp2.RequestHandler):
         archive_template = jinja_environment.get_template('templates/archive.html')
         self.response.out.write(archive_template.render({'essays': all_essays}))
 
-class MessageHandler(webapp2.RequestHandler):
+class AboutHandler(webapp2.RequestHandler):
     def get(self):
-        message_template = jinja_environment.get_template('templates/messages.html')
+        message_template = jinja_environment.get_template('templates/about.html')
         self.response.out.write(message_template.render())
 
 class ViewHandler(webapp2.RequestHandler):
@@ -88,9 +86,8 @@ class RemoveHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/write', EssayHandler),
-    # ('/save', SaveHandler),
     ('/myessays', ArchiveHandler),
-    ('/references', MessageHandler),
+    ('/about', AboutHandler),
     ('/essay_view', ViewHandler),
     ('/remove', RemoveHandler)
 ], debug=True)

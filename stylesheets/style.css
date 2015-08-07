@@ -6,7 +6,9 @@
 	position: fixed;
 	right: 0px;
 }
-
+#photo{
+	border: solid 3px;
+}
 #stopwatch {
 	background-color: #00CCFF;
 	color: #F2F2F2;
